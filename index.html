@@ -1,0 +1,2961 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>中五島高校｜コンテンツライブラリ</title>
+
+
+<style>
+
+/* =====================================================
+   源真ゴシック
+   サイト全体の表示フォント
+===================================================== */
+
+@font-face {
+  font-family: "GenShinGothic";
+  src: url("fonts/GenShinGothic-P-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GenShinGothic";
+  src: url("fonts/GenShinGothic-P-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GenShinGothic";
+  src: url("fonts/GenShinGothic-P-Normal.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GenShinGothic";
+  src: url("fonts/GenShinGothic-P-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GenShinGothic";
+  src: url("fonts/GenShinGothic-P-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GenShinGothic";
+  src: url("fonts/GenShinGothic-P-Heavy.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* =====================================================
+   基本
+===================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+
+  font-family:
+    "GenShinGothic",
+    sans-serif;
+
+  background: #f3f4f6;
+
+  color: #20242a;
+
+  font-weight: 400;
+}
+
+
+/* =====================================================
+   ヘッダー
+===================================================== */
+
+.header {
+
+  height: 72px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #dfe2e6;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 0 28px;
+}
+
+.header-inner {
+
+  width: 100%;
+
+  max-width: 1500px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.logo-area {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+}
+
+.logo-mark {
+
+  width: 40px;
+
+  height: 40px;
+
+  border-radius: 7px;
+
+  background: #174a7c;
+
+  color: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 13px;
+
+  font-weight: 900;
+}
+
+.logo-text {
+
+  line-height: 1.2;
+}
+
+.logo-text .school {
+
+  font-size: 10px;
+
+  color: #737b85;
+
+  letter-spacing: 0.08em;
+
+  font-weight: 400;
+}
+
+.logo-text .title {
+
+  margin-top: 3px;
+
+  font-size: 18px;
+
+  font-weight: 700;
+}
+
+.header-badge {
+
+  padding: 7px 12px;
+
+  background: #f1f2f4;
+
+  border-radius: 6px;
+
+  color: #68717b;
+
+  font-size: 10px;
+
+  font-weight: 500;
+}
+
+
+/* =====================================================
+   上部カテゴリタブ
+===================================================== */
+
+.top-tabs {
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #d9dce1;
+
+  padding: 0 28px;
+}
+
+.top-tabs-inner {
+
+  max-width: 1500px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 3px;
+}
+
+
+/* タブ本体 */
+
+.top-tab {
+
+  position: relative;
+
+  height: 43px;
+
+  min-width: 105px;
+
+  border: none;
+
+  border-radius: 6px 6px 0 0;
+
+  background: #e9eaec;
+
+  color: #69717b;
+
+  font-family:
+    "GenShinGothic",
+    sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  padding: 0 17px;
+
+  transition:
+    background 0.15s,
+    color 0.15s;
+
+  white-space: nowrap;
+}
+
+
+/* 未選択 */
+
+.top-tab:hover {
+
+  background: #dedfe2;
+
+  color: #4f5862;
+}
+
+
+/* 選択中＝オレンジ */
+
+.top-tab.active {
+
+  background: #f47721;
+
+  color: #ffffff;
+
+  font-weight: 700;
+}
+
+
+/* 選択中の下側 */
+
+.top-tab.active::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  right: 0;
+
+  bottom: -1px;
+
+  height: 3px;
+
+  background: #f47721;
+}
+
+
+/* =====================================================
+   全体レイアウト
+===================================================== */
+
+.layout {
+
+  max-width: 1500px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 235px 1fr;
+
+  min-height:
+    calc(100vh - 115px);
+}
+
+
+/* =====================================================
+   左サイドバー
+===================================================== */
+
+.sidebar {
+
+  background: #ffffff;
+
+  border-right: 1px solid #d9dce1;
+
+  padding: 22px 14px;
+}
+
+.sidebar-title {
+
+  padding: 0 11px;
+
+  margin-bottom: 9px;
+
+  color: #8a919a;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+.side-list {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+/* =====================================================
+   サイドボタン
+===================================================== */
+
+.side-button {
+
+  width: 100%;
+
+  min-width: 0;
+
+  border: none;
+
+  background: transparent;
+
+  border-radius: 8px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 10px 11px;
+
+  color: #4e5660;
+
+  font-family:
+    "GenShinGothic",
+    sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+
+.side-button:hover {
+
+  background: #f2f3f5;
+}
+
+.side-button.active {
+
+  background: #fff0e7;
+
+  color: #e86616;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   SVGアイコン
+===================================================== */
+
+.side-icon {
+
+  width: 29px;
+
+  height: 29px;
+
+  min-width: 29px;
+
+  border-radius: 6px;
+
+  background: #eef0f2;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #6e7781;
+
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+
+.side-button.active .side-icon {
+
+  background: #ffe0cc;
+
+  color: #e86616;
+}
+
+.side-icon svg {
+
+  width: 17px;
+
+  height: 17px;
+
+  stroke-width: 1.8;
+}
+
+
+/* 件数 */
+
+.side-count {
+
+  margin-left: auto;
+
+  color: #9aa1a9;
+
+  font-size: 10px;
+
+  font-weight: 400;
+}
+
+
+/* =====================================================
+   メイン
+===================================================== */
+
+.main {
+
+  padding: 25px 30px 55px;
+
+  min-width: 0;
+}
+
+.main-top {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 19px;
+}
+
+.main-title {
+
+  margin: 0;
+
+  font-size: 22px;
+
+  line-height: 1.3;
+
+  font-weight: 700;
+}
+
+.main-subtitle {
+
+  margin-top: 4px;
+
+  color: #858d97;
+
+  font-size: 11px;
+
+  font-weight: 400;
+}
+
+
+/* =====================================================
+   検索
+===================================================== */
+
+.search {
+
+  position: relative;
+
+  width: 290px;
+}
+
+.search input {
+
+  width: 100%;
+
+  height: 40px;
+
+  border: 1px solid #d5d9de;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  padding:
+    0 14px 0 39px;
+
+  outline: none;
+
+  font-family:
+    "GenShinGothic",
+    sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 400;
+}
+
+.search input:focus {
+
+  border-color: #f47721;
+}
+
+.search-icon {
+
+  position: absolute;
+
+  left: 13px;
+
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+
+  width: 15px;
+
+  height: 15px;
+
+  color: #89919a;
+}
+
+.search-icon svg {
+
+  width: 100%;
+
+  height: 100%;
+}
+
+
+/* =====================================================
+   コンテンツ一覧
+===================================================== */
+
+.content-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fill,
+      minmax(280px, 1fr)
+    );
+
+  gap: 17px;
+}
+
+
+/* =====================================================
+   カード
+===================================================== */
+
+.content-card {
+
+  background: #ffffff;
+
+  border: 1px solid #dfe2e6;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.18s,
+    box-shadow 0.18s;
+}
+
+.content-card:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 22px
+    rgba(0, 0, 0, 0.07);
+}
+
+
+/* =====================================================
+   プレビュー
+===================================================== */
+
+.preview {
+
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 9;
+
+  background: #e9ebee;
+
+  overflow: hidden;
+}
+
+.preview img,
+.preview video {
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.preview-placeholder {
+
+  width: 100%;
+
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #a0a7ae;
+
+  font-size: 32px;
+
+  font-weight: 400;
+}
+
+.file-badge {
+
+  position: absolute;
+
+  top: 9px;
+
+  left: 9px;
+
+  padding: 4px 7px;
+
+  border-radius: 4px;
+
+  background:
+    rgba(30, 35, 40, 0.72);
+
+  color: #ffffff;
+
+  font-size: 9px;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   フォントプレビュー
+===================================================== */
+
+.font-preview {
+
+  width: 100%;
+
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #f7f8f9;
+}
+
+.font-preview-main {
+
+  font-size: 50px;
+
+  line-height: 1;
+
+  color: #20242a;
+
+  font-weight: 400;
+
+  margin-bottom: 9px;
+}
+
+.font-preview-name {
+
+  color: #858d97;
+
+  font-size: 10px;
+
+  font-weight: 400;
+}
+
+
+/* =====================================================
+   音源
+===================================================== */
+
+.audio-preview {
+
+  width: 100%;
+
+  height: 100%;
+
+  padding: 30px 22px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.audio-icon {
+
+  margin-bottom: 13px;
+
+  color: #174a7c;
+
+  font-family:
+    "GenShinGothic",
+    sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+.audio-preview audio {
+
+  width: 100%;
+}
+
+
+/* =====================================================
+   カード情報
+===================================================== */
+
+.card-body {
+
+  padding: 14px 16px 16px;
+}
+
+.card-category {
+
+  margin-bottom: 5px;
+
+  color: #8a929b;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+.card-title {
+
+  margin-bottom: 5px;
+
+  font-size: 15px;
+
+  line-height: 1.4;
+
+  font-weight: 700;
+}
+
+.card-description {
+
+  min-height: 38px;
+
+  color: #747c86;
+
+  font-size: 11px;
+
+  line-height: 1.65;
+
+  font-weight: 400;
+}
+
+
+/* =====================================================
+   通常ダウンロード
+===================================================== */
+
+.card-footer {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-top: 12px;
+
+  padding-top: 11px;
+
+  border-top:
+    1px solid #eef0f2;
+}
+
+.extension {
+
+  color: #9299a2;
+
+  font-size: 9px;
+
+  font-weight: 700;
+}
+
+.download {
+
+  height: 32px;
+
+  padding: 0 13px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 6px;
+
+  background: #174a7c;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-family:
+    "GenShinGothic",
+    sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  transition: opacity 0.15s;
+}
+
+.download:hover {
+
+  opacity: 0.82;
+}
+
+
+/* =====================================================
+   フォントウェイト
+===================================================== */
+
+.font-weights {
+
+  margin-top: 13px;
+
+  padding-top: 12px;
+
+  border-top:
+    1px solid #eef0f2;
+}
+
+.font-weights-title {
+
+  margin-bottom: 8px;
+
+  color: #69717c;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+.font-weight-row {
+
+  min-height: 34px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 8px;
+
+  border-bottom:
+    1px solid #f0f1f3;
+}
+
+.font-weight-row:last-of-type {
+
+  border-bottom: none;
+}
+
+.font-weight-name {
+
+  color: #4e5660;
+
+  font-size: 11px;
+
+  font-weight: 400;
+}
+
+.font-weight-number {
+
+  margin-left: 5px;
+
+  color: #9aa1a9;
+
+  font-size: 9px;
+}
+
+.font-weight-download {
+
+  height: 26px;
+
+  padding: 0 9px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  border:
+    1px solid #d5d9de;
+
+  border-radius: 5px;
+
+  background: #ffffff;
+
+  color: #174a7c;
+
+  text-decoration: none;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.font-weight-download:hover {
+
+  background: #f1f5f8;
+}
+
+
+/* =====================================================
+   全ウェイトダウンロード
+===================================================== */
+
+.download-all-fonts {
+
+  width: 100%;
+
+  height: 31px;
+
+  margin-top: 9px;
+
+  border: none;
+
+  border-radius: 5px;
+
+  background: #f47721;
+
+  color: #ffffff;
+
+  font-family:
+    "GenShinGothic",
+    sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.download-all-fonts:hover {
+
+  background: #e86616;
+}
+
+
+/* =====================================================
+   該当なし
+===================================================== */
+
+.no-results {
+
+  display: none;
+
+  padding: 100px 20px;
+
+  text-align: center;
+
+  color: #858d97;
+
+  font-size: 13px;
+}
+
+
+/* =====================================================
+   注意
+===================================================== */
+
+.notice {
+
+  margin-top: 28px;
+
+  padding: 14px 16px;
+
+  border:
+    1px solid #e0e3e7;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #777f88;
+
+  font-size: 10px;
+
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   フッター
+===================================================== */
+
+.footer {
+
+  padding: 20px 30px;
+
+  border-top:
+    1px solid #d9dce1;
+
+  background: #ffffff;
+
+  color: #9198a0;
+
+  font-size: 10px;
+}
+
+
+/* =====================================================
+   スマホ
+===================================================== */
+
+@media (max-width: 850px) {
+
+  .header {
+
+    padding: 0 15px;
+  }
+
+  .header-badge {
+
+    display: none;
+  }
+
+  .top-tabs {
+
+    padding: 0 10px;
+
+    overflow-x: auto;
+  }
+
+  .top-tabs-inner {
+
+    width: max-content;
+  }
+
+  .top-tab {
+
+    min-width: 90px;
+
+    height: 41px;
+
+    padding: 0 13px;
+
+    font-size: 11px;
+  }
+
+  .layout {
+
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+
+    padding: 9px;
+
+    border-right: none;
+
+    border-bottom:
+      1px solid #d9dce1;
+
+    overflow-x: auto;
+  }
+
+  .sidebar-title {
+
+    display: none;
+  }
+
+  .side-list {
+
+    width: max-content;
+
+    flex-direction: row;
+
+    gap: 4px;
+  }
+
+  .side-button {
+
+    width: auto;
+
+    white-space: nowrap;
+  }
+
+  .side-count {
+
+    display: none;
+  }
+
+  .main {
+
+    padding:
+      21px 15px 48px;
+  }
+
+  .main-top {
+
+    align-items: stretch;
+
+    flex-direction: column;
+
+    gap: 14px;
+  }
+
+  .search {
+
+    width: 100%;
+  }
+
+  .content-grid {
+
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =====================================================
+   小さいスマホ
+===================================================== */
+
+@media (max-width: 480px) {
+
+  .logo-mark {
+
+    width: 35px;
+
+    height: 35px;
+
+    font-size: 11px;
+  }
+
+  .logo-text .title {
+
+    font-size: 15px;
+  }
+
+  .main-title {
+
+    font-size: 19px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     ヘッダー
+===================================================== -->
+
+<header class="header">
+
+  <div class="header-inner">
+
+    <div class="logo-area">
+
+      <div class="logo-mark">
+        中高
+      </div>
+
+      <div class="logo-text">
+
+        <div class="school">
+          NAKAGOTO HIGH SCHOOL
+        </div>
+
+        <div class="title">
+          コンテンツライブラリ
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="header-badge">
+      動画制作・SNS用素材
+    </div>
+
+  </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     上部カテゴリ
+===================================================== -->
+
+<nav class="top-tabs">
+
+  <div class="top-tabs-inner">
+
+    <button
+      class="top-tab active"
+      data-category="all">
+
+      すべて
+
+    </button>
+
+
+    <button
+      class="top-tab"
+      data-category="image">
+
+      画像
+
+    </button>
+
+
+    <button
+      class="top-tab"
+      data-category="font">
+
+      フォント
+
+    </button>
+
+
+    <button
+      class="top-tab"
+      data-category="music">
+
+      音源
+
+    </button>
+
+
+    <button
+      class="top-tab"
+      data-category="sound">
+
+      効果音
+
+    </button>
+
+
+    <button
+      class="top-tab"
+      data-category="video">
+
+      動画
+
+    </button>
+
+
+    <button
+      class="top-tab"
+      data-category="template">
+
+      テンプレート
+
+    </button>
+
+  </div>
+
+</nav>
+
+
+
+<div class="layout">
+
+
+<!-- =====================================================
+     サイドバー
+===================================================== -->
+
+<aside class="sidebar">
+
+  <div class="sidebar-title">
+    CATEGORY
+  </div>
+
+
+  <div class="side-list">
+
+
+    <!-- すべて -->
+
+    <button
+      class="side-button active"
+      data-category="all">
+
+      <span class="side-icon">
+
+        <!-- Tabler Layout Grid -->
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+
+          <rect x="4" y="4" width="6" height="6"/>
+          <rect x="14" y="4" width="6" height="6"/>
+          <rect x="4" y="14" width="6" height="6"/>
+          <rect x="14" y="14" width="6" height="6"/>
+
+        </svg>
+
+      </span>
+
+      すべて
+
+      <span
+        class="side-count"
+        data-count="all">
+      </span>
+
+    </button>
+
+
+
+    <!-- 画像 -->
+
+    <button
+      class="side-button"
+      data-category="image">
+
+      <span class="side-icon">
+
+        <!-- Tabler Photo -->
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+
+          <rect x="4" y="4" width="16" height="16" rx="2"/>
+
+          <circle cx="9" cy="9" r="1.5"/>
+
+          <path d="M4 15l4-4c.7-.7 1.8-.7 2.5 0l4 4"/>
+
+          <path d="M14 13l1.5-1.5c.7-.7 1.8-.7 2.5 0l2 2"/>
+
+        </svg>
+
+      </span>
+
+      画像
+
+      <span
+        class="side-count"
+        data-count="image">
+      </span>
+
+    </button>
+
+
+
+    <!-- フォント -->
+
+    <button
+      class="side-button"
+      data-category="font">
+
+      <span class="side-icon">
+
+        <!-- Tabler Typography -->
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+
+          <path d="M4 7V4h16v3"/>
+          <path d="M9 20h6"/>
+          <path d="M12 4v16"/>
+
+        </svg>
+
+      </span>
+
+      フォント
+
+      <span
+        class="side-count"
+        data-count="font">
+      </span>
+
+    </button>
+
+
+
+    <!-- 音源 -->
+
+    <button
+      class="side-button"
+      data-category="music">
+
+      <span class="side-icon">
+
+        <!-- Tabler Music -->
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+
+          <path d="M9 18V5l12-2v13"/>
+          <circle cx="6" cy="18" r="3"/>
+          <circle cx="18" cy="16" r="3"/>
+
+        </svg>
+
+      </span>
+
+      音源
+
+      <span
+        class="side-count"
+        data-count="music">
+      </span>
+
+    </button>
+
+
+
+    <!-- 効果音 -->
+
+    <button
+      class="side-button"
+      data-category="sound">
+
+      <span class="side-icon">
+
+        <!-- Tabler Volume -->
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+
+          <path d="M11 5l-5 5H3v4h3l5 5z"/>
+
+          <path d="M15 9c1.3 1.3 1.3 4.7 0 6"/>
+
+          <path d="M18 6c2.5 2.5 2.5 9.5 0 12"/>
+
+        </svg>
+
+      </span>
+
+      効果音
+
+      <span
+        class="side-count"
+        data-count="sound">
+      </span>
+
+    </button>
+
+
+
+    <!-- 動画 -->
+
+    <button
+      class="side-button"
+      data-category="video">
+
+      <span class="side-icon">
+
+        <!-- Tabler Video -->
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+
+          <rect x="3" y="5" width="13" height="14" rx="2"/>
+
+          <path d="M16 10l5-3v10l-5-3z"/>
+
+        </svg>
+
+      </span>
+
+      動画
+
+      <span
+        class="side-count"
+        data-count="video">
+      </span>
+
+    </button>
+
+
+
+    <!-- テンプレート -->
+
+    <button
+      class="side-button"
+      data-category="template">
+
+      <span class="side-icon">
+
+        <!-- Tabler Layout -->
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+
+          <rect x="4" y="4" width="16" height="16" rx="2"/>
+
+          <path d="M4 9h16"/>
+          <path d="M9 9v11"/>
+
+        </svg>
+
+      </span>
+
+      テンプレート
+
+      <span
+        class="side-count"
+        data-count="template">
+      </span>
+
+    </button>
+
+
+  </div>
+
+</aside>
+
+
+
+<!-- =====================================================
+     メイン
+===================================================== -->
+
+<main class="main">
+
+
+  <div class="main-top">
+
+    <div>
+
+      <h1
+        class="main-title"
+        id="mainTitle">
+
+        すべての素材
+
+      </h1>
+
+
+      <div
+        class="main-subtitle"
+        id="mainSubtitle">
+
+        動画制作や公式SNSで使用できる素材
+
+      </div>
+
+    </div>
+
+
+
+    <!-- 検索 -->
+
+    <div class="search">
+
+      <span class="search-icon">
+
+        <!-- Tabler Search -->
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+
+          <circle cx="10.5" cy="10.5" r="6.5"/>
+
+          <path d="M16 16l5 5"/>
+
+        </svg>
+
+      </span>
+
+
+      <input
+        type="search"
+        id="searchInput"
+        placeholder="素材を検索...">
+
+    </div>
+
+  </div>
+
+
+
+  <!-- コンテンツ -->
+
+  <div
+    class="content-grid"
+    id="contentGrid">
+  </div>
+
+
+  <div
+    class="no-results"
+    id="noResults">
+
+    該当するコンテンツがありません。
+
+  </div>
+
+
+
+  <!-- 注意 -->
+
+  <div class="notice">
+
+    ※ このライブラリに掲載されている素材は、
+    中五島高校の動画制作・公式SNS等で使用するためのものです。
+
+    <br>
+
+    ※ 素材ごとの利用条件を確認してから使用してください。
+
+  </div>
+
+
+</main>
+
+</div>
+
+
+
+<footer class="footer">
+
+  NAKAGOTO HIGH SCHOOL
+  ｜ Video Production Contents Library
+
+</footer>
+
+
+
+<script>
+
+
+/* =====================================================
+   ★★★★★ 素材登録エリア ★★★★★
+=====================================================
+
+   新しい素材を追加するときは、
+   基本的にここへ書き足すだけです。
+
+===================================================== */
+
+
+const materials = [
+
+
+  /* ===================================================
+     画像
+  =================================================== */
+
+  {
+    name: "なかごとうロゴ",
+
+    file: "images/nakagoto-sakana.png",
+
+    type: "image",
+
+    description:
+      "「なかごとう」の文字を魚風にデザインされた画像です。"
+  },
+
+
+  {
+    name: "長崎県立中五島高等学校｜校章",
+
+    file: "images/nakakou-kousho.png",
+
+    type: "image",
+
+    description:
+      "今後これをSVG画像化したものも公開する予定です。なので、公開するまでは、Homeにあるものを使用してください。（多分あったはず）"
+  },
+
+
+
+  /* ===================================================
+     フォント
+  =================================================== */
+
+  {
+    name: "源真ゴシックP",
+
+    type: "font",
+
+    description:
+      "動画・画像制作などに使用できる源真ゴシックです。GoogleとAdobeが共同開発した源ノ角ゴシックをさらに他のものに利用しやすいように生まれた派生フォントです。プロポーショナルフォントなので読みやすさが向上します。",
+
+    fontFiles: [
+
+
+      {
+        name: "ExtraLight",
+
+        weight: 200,
+
+        file:
+          "fonts/GenShinGothic-P-ExtraLight.ttf"
+      },
+
+
+      {
+        name: "Light",
+
+        weight: 300,
+
+        file:
+          "fonts/GenShinGothic-P-Light.ttf"
+      },
+
+
+      {
+        name: "Normal",
+
+        weight: 400,
+
+        file:
+          "fonts/GenShinGothic-P-Normal.ttf"
+      },
+
+
+      {
+        name: "Medium",
+
+        weight: 500,
+
+        file:
+          "fonts/GenShinGothic-P-Medium.ttf"
+      },
+
+
+      {
+        name: "Bold",
+
+        weight: 700,
+
+        file:
+          "fonts/GenShinGothic-P-Bold.ttf"
+      },
+
+
+      {
+        name: "Heavy",
+
+        weight: 900,
+
+        file:
+          "fonts/GenShinGothic-P-Heavy.ttf"
+      }
+
+    ]
+
+  },
+
+
+
+  /* ===================================================
+     音源
+  =================================================== */
+
+  {
+    name: "Cassette_Tape_Dream.mp3",
+
+    file: "music/Cassette_Tape_Dream.mp3",
+
+    type: "music",
+
+    description:
+      "学校紹介動画などに使用できます。"
+  },
+
+
+  {
+    name: "のんきな日常.mp3",
+
+    file: "music/のんきな日常.mp3",
+
+    type: "music",
+
+    description:
+      "動画の冒頭などに使用できます。"
+  },
+  
+    {
+    name: "カナリアスキップ.mp3",
+
+    file: "music/カナリアスキップ.mp3",
+
+    type: "music",
+
+    description:
+      "爽快感があるようなBGMを流したい時に試してみては？"
+  },
+  
+    {
+    name: "なんでしょう？.mp3",
+
+    file: "music/なんでしょう？.mp3",
+
+    type: "music",
+
+    description:
+      "学校にまつわるクイズを出題する時にはこの音源ありかも？"
+  },
+  
+    {
+    name: "Sparkling_sea.mp3",
+
+    file: "music/Sparkling_sea.mp3",
+
+    type: "music",
+
+    description:
+      "何かの紹介動画とかではよく聞くような気がします（個人的に）。"
+  },
+  
+    {
+    name: "the_opening_of_a_book.mp3",
+
+    file: "music/the_opening_of_a_book.mp3",
+
+    type: "music",
+
+    description:
+      "動画の冒頭などに使用できます。"
+  },
+  
+    {
+    name: "おどれグロッケンシュピール.mp3",
+
+    file: "music/おどれグロッケンシュピール.mp3",
+
+    type: "music",
+
+    description:
+      "紹介動画とかでは使えそう！"
+  },
+  
+    {
+    name: "おどれグロッケンシュピール_2.mp3",
+
+    file: "music/おどれグロッケンシュピール_2.mp3",
+
+    type: "music",
+
+    description:
+      "「おどれグロッケンシュピール」のループ再生対応版。最初にこの2のファイルを冒頭で再生し、後から「おどれグロッケンシュピール_3」のファイルと組み合わせることでループトラックになります。要望があれば、ループ再生し続けるファイル作成します。"
+  },
+  
+    {
+    name: "おどれグロッケンシュピール_3.mp3",
+
+    file: "music/おどれグロッケンシュピール_3.mp3",
+
+    type: "music",
+
+    description:
+      "「おどれグロッケンシュピール_2」の後にこれをずっと繋いでいってください。そうするとループになります。"
+  },
+
+
+
+  /* ===================================================
+     効果音
+  =================================================== */
+
+  {
+    name: "準備中",
+
+    file: "sounds/click.mp3",
+
+    type: "sound",
+
+    description:
+      "準備中です。しばらくお待ちください。。"
+  },
+
+
+
+  /* ===================================================
+     動画
+  =================================================== */
+
+  {
+    name: "準備中",
+
+    file: "videos/opening.mp4",
+
+    type: "video",
+
+    description:
+      "準備中。しばらくお待ちください。"
+  },
+
+
+
+  /* ===================================================
+     テンプレート
+  =================================================== */
+
+  {
+    name: "Instagram 投稿テンプレート",
+
+    file:
+      "templates/instagram-post.png",
+
+    type: "template",
+
+    description:
+      "Instagram投稿用の画像テンプレートです。作成したらリンクを公開します。"
+  }
+
+];
+
+
+
+/* =====================================================
+   カテゴリ
+===================================================== */
+
+const categoryNames = {
+
+  all:
+    "すべての素材",
+
+  image:
+    "画像",
+
+  font:
+    "フォント",
+
+  music:
+    "音源",
+
+  sound:
+    "効果音",
+
+  video:
+    "動画",
+
+  template:
+    "テンプレート"
+
+};
+
+
+const categoryDescriptions = {
+
+  all:
+    "動画制作や公式SNSで使用できる素材",
+
+  image:
+    "学校紹介・SNS投稿などに使用できる画像",
+
+  font:
+    "動画や画像制作で使用できるフォント",
+
+  music:
+    "動画のBGMとして使用できる音源",
+
+  sound:
+    "動画編集に使用できる効果音",
+
+  video:
+    "動画制作に使用できる動画素材",
+
+  template:
+    "Instagramなどで使用できるテンプレート"
+
+};
+
+
+let currentCategory = "all";
+
+
+
+/* =====================================================
+   拡張子
+===================================================== */
+
+function getExtension(file) {
+
+  const parts =
+    file.split(".");
+
+  if (
+    parts.length < 2
+  ) {
+
+    return "FILE";
+
+  }
+
+  return parts
+    .pop()
+    .toUpperCase();
+
+}
+
+
+
+/* =====================================================
+   プレビュー
+===================================================== */
+
+function createPreview(material) {
+
+
+  /* -------------------------
+     画像・テンプレート
+  ------------------------- */
+
+  if (
+
+    material.type === "image" ||
+
+    material.type === "template"
+
+  ) {
+
+    return `
+
+      <div class="preview">
+
+        <img
+          src="${material.file}"
+          alt="${material.name}"
+          onerror="
+            this.style.display='none';
+            this.nextElementSibling.style.display='flex';
+          "
+        >
+
+        <div
+          class="preview-placeholder"
+          style="display:none;">
+
+          IMAGE
+
+        </div>
+
+        <div class="file-badge">
+
+          ${getExtension(material.file)}
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+
+
+  /* -------------------------
+     動画
+  ------------------------- */
+
+  if (
+    material.type === "video"
+  ) {
+
+    return `
+
+      <div class="preview">
+
+        <video
+          src="${material.file}"
+          controls
+          preload="metadata">
+        </video>
+
+        <div class="file-badge">
+
+          ${getExtension(material.file)}
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+
+
+  /* -------------------------
+     音源・効果音
+  ------------------------- */
+
+  if (
+
+    material.type === "music" ||
+
+    material.type === "sound"
+
+  ) {
+
+    return `
+
+      <div class="preview">
+
+        <div class="audio-preview">
+
+          <div class="audio-icon">
+
+            AUDIO
+
+          </div>
+
+          <audio
+            src="${material.file}"
+            controls
+            preload="metadata">
+          </audio>
+
+        </div>
+
+        <div class="file-badge">
+
+          ${getExtension(material.file)}
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+
+
+  /* -------------------------
+     フォント
+  ------------------------- */
+
+  if (
+    material.type === "font"
+  ) {
+
+    return `
+
+      <div class="preview">
+
+        <div class="font-preview">
+
+          <div class="font-preview-main">
+
+            あアAa
+
+          </div>
+
+          <div class="font-preview-name">
+
+            GenShinGothic
+
+          </div>
+
+        </div>
+
+        <div class="file-badge">
+
+          TTF
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+}
+
+
+
+/* =====================================================
+   フォントカード
+===================================================== */
+
+function createFontCard(material) {
+
+
+  const card =
+    document.createElement("div");
+
+  card.className =
+    "content-card";
+
+
+  let rows = "";
+
+
+  material.fontFiles.forEach(
+    font => {
+
+
+      rows += `
+
+        <div class="font-weight-row">
+
+          <div>
+
+            <span
+              class="font-weight-name"
+              style="
+                font-weight:
+                ${font.weight};
+              "
+            >
+
+              ${font.name}
+
+            </span>
+
+
+            <span
+              class="font-weight-number">
+
+              ${font.weight}
+
+            </span>
+
+          </div>
+
+
+          <a
+            class="font-weight-download"
+            href="${font.file}"
+            download>
+
+            ダウンロード
+
+          </a>
+
+        </div>
+
+      `;
+
+    }
+  );
+
+
+  card.innerHTML = `
+
+    ${createPreview(material)}
+
+    <div class="card-body">
+
+
+      <div class="card-category">
+
+        FONT
+
+      </div>
+
+
+      <div class="card-title">
+
+        ${material.name}
+
+      </div>
+
+
+      <div class="card-description">
+
+        ${material.description}
+
+      </div>
+
+
+      <div class="font-weights">
+
+
+        <div class="font-weights-title">
+
+          フォントウェイト
+
+        </div>
+
+
+        ${rows}
+
+
+        <button
+          class="download-all-fonts"
+          type="button">
+
+          すべてのウェイトをダウンロード
+
+        </button>
+
+
+      </div>
+
+
+    </div>
+
+  `;
+
+
+  /* 全ウェイトDL */
+
+  const allButton =
+    card.querySelector(
+      ".download-all-fonts"
+    );
+
+
+  allButton.addEventListener(
+    "click",
+    () => {
+
+
+      material.fontFiles
+        .forEach(
+          (font, index) => {
+
+
+            setTimeout(
+              () => {
+
+
+                const link =
+                  document.createElement("a");
+
+
+                link.href =
+                  font.file;
+
+
+                link.download = "";
+
+
+                document.body
+                  .appendChild(link);
+
+
+                link.click();
+
+
+                document.body
+                  .removeChild(link);
+
+
+              },
+              index * 500
+            );
+
+          }
+        );
+
+    }
+  );
+
+
+  return card;
+
+}
+
+
+
+/* =====================================================
+   通常カード
+===================================================== */
+
+function createNormalCard(material) {
+
+
+  const card =
+    document.createElement("div");
+
+  card.className =
+    "content-card";
+
+
+  card.innerHTML = `
+
+    ${createPreview(material)}
+
+    <div class="card-body">
+
+
+      <div class="card-category">
+
+        ${material.type.toUpperCase()}
+
+      </div>
+
+
+      <div class="card-title">
+
+        ${material.name}
+
+      </div>
+
+
+      <div class="card-description">
+
+        ${material.description}
+
+      </div>
+
+
+      <div class="card-footer">
+
+
+        <span class="extension">
+
+          ${getExtension(material.file)}
+
+        </span>
+
+
+        <a
+          class="download"
+          href="${material.file}"
+          download>
+
+          ダウンロード
+
+        </a>
+
+
+      </div>
+
+
+    </div>
+
+  `;
+
+
+  return card;
+
+}
+
+
+
+/* =====================================================
+   素材表示
+===================================================== */
+
+function renderMaterials() {
+
+
+  const grid =
+    document.getElementById(
+      "contentGrid"
+    );
+
+
+  const searchText =
+    document
+      .getElementById(
+        "searchInput"
+      )
+      .value
+      .toLowerCase()
+      .trim();
+
+
+  grid.innerHTML = "";
+
+
+  const filtered =
+    materials.filter(
+      material => {
+
+
+        const categoryOK =
+
+          currentCategory === "all" ||
+
+          material.type ===
+            currentCategory;
+
+
+        let searchableText =
+
+          material.name +
+
+          " " +
+
+          material.description;
+
+
+        if (
+          material.fontFiles
+        ) {
+
+          searchableText +=
+
+            " " +
+
+            material.fontFiles
+              .map(
+                font =>
+                  font.name
+              )
+              .join(" ");
+
+        }
+
+
+        const searchOK =
+
+          searchableText
+            .toLowerCase()
+            .includes(
+              searchText
+            );
+
+
+        return (
+          categoryOK &&
+          searchOK
+        );
+
+      }
+    );
+
+
+  document
+    .getElementById(
+      "noResults"
+    )
+    .style.display =
+
+      filtered.length === 0
+        ? "block"
+        : "none";
+
+
+  filtered.forEach(
+    material => {
+
+
+      let card;
+
+
+      if (
+
+        material.type === "font" &&
+
+        material.fontFiles
+
+      ) {
+
+        card =
+          createFontCard(
+            material
+          );
+
+      } else {
+
+        card =
+          createNormalCard(
+            material
+          );
+
+      }
+
+
+      grid.appendChild(card);
+
+    }
+  );
+
+
+  updateCounts();
+
+}
+
+
+
+/* =====================================================
+   件数
+===================================================== */
+
+function updateCounts() {
+
+
+  const types = [
+
+    "all",
+    "image",
+    "font",
+    "music",
+    "sound",
+    "video",
+    "template"
+
+  ];
+
+
+  types.forEach(
+    type => {
+
+
+      const count =
+
+        type === "all"
+
+          ? materials.length
+
+          : materials.filter(
+              material =>
+                material.type === type
+            ).length;
+
+
+      const element =
+        document.querySelector(
+          `[data-count="${type}"]`
+        );
+
+
+      if (element) {
+
+        element.textContent =
+          count;
+
+      }
+
+    }
+  );
+
+}
+
+
+
+/* =====================================================
+   カテゴリ変更
+===================================================== */
+
+function changeCategory(
+  category
+) {
+
+
+  currentCategory =
+    category;
+
+
+  /* 上部タブ */
+
+  document
+    .querySelectorAll(
+      ".top-tab"
+    )
+    .forEach(
+      button => {
+
+
+        button.classList.toggle(
+
+          "active",
+
+          button.dataset.category ===
+            category
+
+        );
+
+      }
+    );
+
+
+  /* サイドバー */
+
+  document
+    .querySelectorAll(
+      ".side-button"
+    )
+    .forEach(
+      button => {
+
+
+        button.classList.toggle(
+
+          "active",
+
+          button.dataset.category ===
+            category
+
+        );
+
+      }
+    );
+
+
+  /* タイトル */
+
+  document
+    .getElementById(
+      "mainTitle"
+    )
+    .textContent =
+
+      categoryNames[
+        category
+      ];
+
+
+  document
+    .getElementById(
+      "mainSubtitle"
+    )
+    .textContent =
+
+      categoryDescriptions[
+        category
+      ];
+
+
+  renderMaterials();
+
+}
+
+
+
+/* =====================================================
+   上部タブ
+===================================================== */
+
+document
+  .querySelectorAll(
+    ".top-tab"
+  )
+  .forEach(
+    button => {
+
+
+      button.addEventListener(
+        "click",
+        () => {
+
+
+          changeCategory(
+
+            button.dataset.category
+
+          );
+
+        }
+      );
+
+    }
+  );
+
+
+
+/* =====================================================
+   サイドバー
+===================================================== */
+
+document
+  .querySelectorAll(
+    ".side-button"
+  )
+  .forEach(
+    button => {
+
+
+      button.addEventListener(
+        "click",
+        () => {
+
+
+          changeCategory(
+
+            button.dataset.category
+
+          );
+
+        }
+      );
+
+    }
+  );
+
+
+
+/* =====================================================
+   検索
+===================================================== */
+
+document
+  .getElementById(
+    "searchInput"
+  )
+  .addEventListener(
+    "input",
+    renderMaterials
+  );
+
+
+
+/* =====================================================
+   初期表示
+===================================================== */
+
+renderMaterials();
+
+
+</script>
+
+
+</body>
+</html>
